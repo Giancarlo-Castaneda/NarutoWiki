@@ -19,13 +19,10 @@ struct AsyncLazyImageView: View {
                 image
                     .resizable()
                     .aspectRatio(contentMode: .fit)
+            } else if state.isLoading {
+                ProgressView()
             } else {
-                Image(systemName: "person.crop.artframe") // Placeholder
-                    .resizable()
-                    .frame(width: 50)
-                    .aspectRatio(0.9,contentMode: .fit)
-                    .foregroundStyle(Color.gray)
-                    .opacity(0.8)
+                Color.gray.opacity(0.2)
             }
         }
         .pipeline(pipeline)

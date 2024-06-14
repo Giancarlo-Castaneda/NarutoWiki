@@ -9,15 +9,16 @@ struct CharacterListView: View {
             GeometryReader { geometry in
                 ScrollView {
                     let spacing: CGFloat = 10
-                    let side = geometry.size.width / 2 - spacing
-                    let item = GridItem(.flexible(minimum: side, maximum: 300), spacing: spacing)
+                    let width = geometry.size.width / 2 - spacing
+                    let side = width < 0 ? 200 : width
+                    let item = GridItem(.flexible(minimum: 50, maximum: side), spacing: spacing)
                     LazyVGrid(columns:  Array(repeating: item, count: 2)) {
                         ForEach(store.characters, id: \.id) { character in
                             VStack {
                                 if let image = character.images.first,
                                    let url = URL(string: image) {
                                     AsyncLazyImageView(url: url)
-                                        .frame(maxHeight: side * 2)
+                                        .frame(maxHeight: side)
                                         .padding(5)
                                 }
                                 Text(character.name)
