@@ -28,7 +28,7 @@ struct CharacterListReducer {
             switch action {
             case .fetchCharacterList:
                 guard
-                    (perPage * state.page < state.totalCharacters || state.page == 1) && !state.isLoading
+                    (state.characters.count < state.totalCharacters || state.page == 1) && !state.isLoading
                 else { return .none}
 
                 state.isLoading = true
