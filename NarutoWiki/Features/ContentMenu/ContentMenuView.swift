@@ -2,33 +2,45 @@ import ComposableArchitecture
 import SwiftUI
 
 struct ContentMenuView: View {
-    var store : StoreOf<ContentMenuReducer>
+    @Bindable var store : StoreOf<ContentMenuReducer>
 
     var body: some View {
-        VStack {
-            if let titleImage = store.titleImage {
-                AsyncLazyImageView(url: titleImage)
-                    .frame(maxWidth: 300)
-                    .padding(.bottom)
-            }
-            let item = GridItem(.flexible(minimum: 50, maximum: 400), spacing: 10)
-            LazyVGrid(columns: Array(repeating: item, count: 2)) {
-                ForEach(store.contents, id: \.id) { item in
-                    VStack {
-                        Text(item.title)
-                            .padding(.top)
-                            .padding(.horizontal, 10)
-                        if let url = URL(string: item.image) {
-                            AsyncLazyImageView(url: url)
-                                .padding(10)
+        NavigationStack(path: $store.scope(state: \.path, action: \.path)) {
+            VStack {
+                if let titleImage = store.titleImage {
+                    AsyncLazyImageView(url: titleImage)
+                        .frame(maxWidth: 300)
+                        .padding(.bottom)
+                }
+                let item = GridItem(.flexible(minimum: 50, maximum: 400), spacing: 10)
+                LazyVGrid(columns: Array(repeating: item, count: 2)) {
+                    ForEach(store.contents, id: \.id) { item in
+                        NavigationLink(state: ContentMenuReducer.Destination.State.characterList(CharacterListReducer.State())) {
+                            VStack {
+                                Text(item.title)
+                                    .padding(.top)
+                                    .padding(.horizontal, 10)
+                                if let url = URL(string: item.image) {
+                                    AsyncLazyImageView(url: url)
+                                        .padding(10)
+                                }
+                            }
+                            .roundedCornerFill(lineWidth: 1,
+                                               borderColor: Color.brown.opacity(0.3),
+                                               radius: 10, corners: [.allCorners])
                         }
                     }
-                    .roundedCornerFill(lineWidth: 1,
-                                       borderColor: Color.brown.opacity(0.3),
-                                       radius: 10, corners: [.allCorners])
                 }
+                .padding(.horizontal, 10)
             }
-            .padding(.horizontal, 10)
+        } destination: { store in
+            switch store.case {
+            case let .characterList(store):
+                CharacterListView(store: store)
+            }
+        }
+        .onAppear {
+            store.send(.fetchContent)
         }
     }
 }

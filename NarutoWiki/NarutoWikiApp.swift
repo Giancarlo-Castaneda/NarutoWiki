@@ -9,14 +9,14 @@ import SwiftUI
 
 @main
 struct NarutoWikiApp: App {
-    static let store = Store(initialState: CharacterListReducer.State()) {
-        CharacterListReducer()
+    static let store = Store(initialState: ContentMenuReducer.State()) {
+        ContentMenuReducer()
             ._printChanges()
     }
 
     var body: some Scene {
         WindowGroup {
-            CharacterListView(store: NarutoWikiApp.store)
+            ContentMenuView(store: NarutoWikiApp.store)
         }
     }
 }

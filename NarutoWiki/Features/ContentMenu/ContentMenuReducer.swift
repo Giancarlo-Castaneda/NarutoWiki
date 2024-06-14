@@ -3,10 +3,15 @@ import Foundation
 
 @Reducer
 struct ContentMenuReducer {
-    
+
+    @Reducer(state: .equatable)
+    enum Destination {
+        case characterList(CharacterListReducer)
+    }
+
     @ObservableState
-    struct State {
-        @Presents var destination: Destination.State?
+    struct State: Equatable {
+        var path = StackState<Destination.State>()
         var contents: [ContentItemModel] = []
         var isLoading = false
         var titleImage: URL?
@@ -15,6 +20,7 @@ struct ContentMenuReducer {
     enum Action {
         case fetchContent
         case contentResponse([ContentItemModel])
+        case path(StackActionOf<Destination>)
     }
 
     var body: some ReducerOf<Self> {
@@ -35,16 +41,12 @@ struct ContentMenuReducer {
                 state.contents = result
                 state.isLoading = false
                 return .none
+
+            case .path(_):
+                return .none
             }
         }
-    }
-}
-
-extension ContentMenuReducer {
-
-    @Reducer(state: .equatable)
-    enum Destination {
-        case characterList(CharacterListReducer)
+        .forEach(\.path, action: \.path)
     }
 }
 
