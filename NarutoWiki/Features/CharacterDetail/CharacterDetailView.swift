@@ -12,8 +12,7 @@ struct CharacterDetailView: View {
                         TabView {
                             ForEach(store.detail.images, id: \.self) { image in
                                 if let url = URL(string: image) {
-                                    ImageView(withURL: url)
-                                        .aspectRatio(1.3, contentMode: .fit)
+                                    AsyncLazyImageView(url: url)
                                 }
                             }
                         }

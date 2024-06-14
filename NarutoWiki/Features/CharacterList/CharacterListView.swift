@@ -6,40 +6,51 @@ struct CharacterListView: View {
 
     var body: some View {
         NavigationStack {
-            ScrollView {
-                LazyVGrid(columns: [GridItem(.flexible(minimum: 100, maximum: 400))]) {
-                    ForEach(store.characters, id: \.id) { character in
-                        VStack {
-                            if let image = character.images.first,
-                               let url = URL(string: image) {
-                                ImageView(withURL: url)
-                                    .aspectRatio(1.3, contentMode: .fit)
-                            }
-                            Text(character.name)
-                        }
-                        .onTapGesture {
-                            store.send(.detailTapped(character))
-                        }
-                    }
-                    if store.isLoading {
-                        ProgressView()
-                    } else {
-                        Color.clear
-                            .onAppear {
-                                if !store.characters.isEmpty {
-                                    store.send(.fetchCharacterList)
+            GeometryReader { geometry in
+                ScrollView {
+                    let spacing: CGFloat = 10
+                    let side = geometry.size.width / 2 - spacing
+                    let item = GridItem(.flexible(minimum: side, maximum: 300), spacing: spacing)
+                    LazyVGrid(columns:  Array(repeating: item, count: 2)) {
+                        ForEach(store.characters, id: \.id) { character in
+                            VStack {
+                                if let image = character.images.first,
+                                   let url = URL(string: image) {
+                                    AsyncLazyImageView(url: url)
+                                        .frame(maxHeight: side * 2)
+                                        .padding(5)
                                 }
+                                Text(character.name)
+                                    .padding(.horizontal, 5)
+                                    .padding(.bottom)
                             }
-                    }
-                }
+                            .frame(minWidth: side,  minHeight: side)
+                            .roundedCornerFill(lineWidth: 1, borderColor: Color.brown.opacity(0.3), radius: 10, corners: [.allCorners])
 
+                            .onTapGesture {
+                                store.send(.detailTapped(character))
+                            }
+                        }
+                        if store.isLoading {
+                            ProgressView()
+                        } else {
+                            Color.clear
+                                .onAppear {
+                                    if !store.characters.isEmpty {
+                                        store.send(.fetchCharacterList)
+                                    }
+                                }
+                        }
+                    }
+
+                }
+                .onAppear {
+                    store.send(.fetchCharacterList)
+                }
+                .navigationTitle("Personajes")
             }
-            .onAppear {
-                store.send(.fetchCharacterList)
-            }
-            .navigationTitle("Personajes")
         }
-        .sheet(item: $store.scope(state: \.destination?.characterDetail, 
+        .sheet(item: $store.scope(state: \.destination?.characterDetail,
                                   action: \.destination.characterDetail)
         ) { characterDetailStore in
             NavigationStack {

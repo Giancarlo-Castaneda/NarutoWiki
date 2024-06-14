@@ -30,12 +30,13 @@
 		ABA793952C1AAAAA00299AD9 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = ABA793942C1AAAAA00299AD9 /* ComposableArchitecture */; };
 		ABA793992C1AAC2600299AD9 /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA793982C1AAC2600299AD9 /* CharacterModel.swift */; };
 		ABA7939B2C1B2F7F00299AD9 /* CharacterListClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7939A2C1B2F7F00299AD9 /* CharacterListClient.swift */; };
-		ABA7939F2C1B3C3700299AD9 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7939D2C1B3C3700299AD9 /* ImageCache.swift */; };
-		ABA793A02C1B3C3700299AD9 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7939E2C1B3C3700299AD9 /* ImageDownloader.swift */; };
-		ABA793A32C1B3C8700299AD9 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA793A22C1B3C8700299AD9 /* ImageView.swift */; };
 		ABA793A52C1B447A00299AD9 /* CharacterPagedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA793A42C1B447A00299AD9 /* CharacterPagedModel.swift */; };
 		ABA793A82C1B871C00299AD9 /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA793A72C1B871C00299AD9 /* CharacterDetailView.swift */; };
 		ABA793AA2C1B878E00299AD9 /* CharacterDetailReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA793A92C1B878E00299AD9 /* CharacterDetailReducer.swift */; };
+		ABDD8BAF2C1CA08100B53DE1 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = ABDD8BAE2C1CA08100B53DE1 /* Nuke */; };
+		ABDD8BB12C1CA08100B53DE1 /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = ABDD8BB02C1CA08100B53DE1 /* NukeUI */; };
+		ABDD8BB42C1CB40B00B53DE1 /* AsyncLazyImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDD8BB32C1CB40B00B53DE1 /* AsyncLazyImageView.swift */; };
+		ABDD8BB82C1CB51B00B53DE1 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDD8BB72C1CB51B00B53DE1 /* RoundedCorner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,12 +82,11 @@
 		ABA793902C1AA89700299AD9 /* CharacterListReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListReducer.swift; sourceTree = "<group>"; };
 		ABA793982C1AAC2600299AD9 /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
 		ABA7939A2C1B2F7F00299AD9 /* CharacterListClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListClient.swift; sourceTree = "<group>"; };
-		ABA7939D2C1B3C3700299AD9 /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
-		ABA7939E2C1B3C3700299AD9 /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
-		ABA793A22C1B3C8700299AD9 /* ImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		ABA793A42C1B447A00299AD9 /* CharacterPagedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterPagedModel.swift; sourceTree = "<group>"; };
 		ABA793A72C1B871C00299AD9 /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
 		ABA793A92C1B878E00299AD9 /* CharacterDetailReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailReducer.swift; sourceTree = "<group>"; };
+		ABDD8BB32C1CB40B00B53DE1 /* AsyncLazyImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncLazyImageView.swift; sourceTree = "<group>"; };
+		ABDD8BB72C1CB51B00B53DE1 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +94,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABDD8BB12C1CA08100B53DE1 /* NukeUI in Frameworks */,
 				ABA793952C1AAAAA00299AD9 /* ComposableArchitecture in Frameworks */,
+				ABDD8BAF2C1CA08100B53DE1 /* Nuke in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,7 +147,7 @@
 				ABA7938E2C1AA75C00299AD9 /* Features */,
 				ABA793752C1AA5AC00299AD9 /* Networking */,
 				ABA7933C2C1A737200299AD9 /* Preview Content */,
-				ABA793A12C1B3C7A00299AD9 /* UI */,
+				ABDD8BB22C1CB3D200B53DE1 /* UI */,
 				ABA793802C1AA5CC00299AD9 /* Utils */,
 			);
 			path = NarutoWiki;
@@ -201,7 +203,7 @@
 		ABA793802C1AA5CC00299AD9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				ABA7939C2C1B3C2800299AD9 /* ImageDownloader */,
+				ABDD8BB62C1CB50800B53DE1 /* Modifiers */,
 				ABA793842C1AA5EB00299AD9 /* Extensions */,
 				ABA793812C1AA5D100299AD9 /* Logger */,
 			);
@@ -278,23 +280,6 @@
 			path = NarutoAPI;
 			sourceTree = "<group>";
 		};
-		ABA7939C2C1B3C2800299AD9 /* ImageDownloader */ = {
-			isa = PBXGroup;
-			children = (
-				ABA7939D2C1B3C3700299AD9 /* ImageCache.swift */,
-				ABA7939E2C1B3C3700299AD9 /* ImageDownloader.swift */,
-			);
-			path = ImageDownloader;
-			sourceTree = "<group>";
-		};
-		ABA793A12C1B3C7A00299AD9 /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				ABA793A22C1B3C8700299AD9 /* ImageView.swift */,
-			);
-			path = UI;
-			sourceTree = "<group>";
-		};
 		ABA793A62C1B870100299AD9 /* CharacterDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,6 +287,22 @@
 				ABA793A92C1B878E00299AD9 /* CharacterDetailReducer.swift */,
 			);
 			path = CharacterDetail;
+			sourceTree = "<group>";
+		};
+		ABDD8BB22C1CB3D200B53DE1 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				ABDD8BB32C1CB40B00B53DE1 /* AsyncLazyImageView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		ABDD8BB62C1CB50800B53DE1 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				ABDD8BB72C1CB51B00B53DE1 /* RoundedCorner.swift */,
+			);
+			path = Modifiers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,6 +323,8 @@
 			name = NarutoWiki;
 			packageProductDependencies = (
 				ABA793942C1AAAAA00299AD9 /* ComposableArchitecture */,
+				ABDD8BAE2C1CA08100B53DE1 /* Nuke */,
+				ABDD8BB02C1CA08100B53DE1 /* NukeUI */,
 			);
 			productName = NarutoWiki;
 			productReference = ABA793332C1A737100299AD9 /* NarutoWiki.app */;
@@ -397,6 +400,7 @@
 			mainGroup = ABA7932A2C1A737100299AD9;
 			packageReferences = (
 				ABA793922C1AAA9300299AD9 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				ABDD8BAD2C1CA08100B53DE1 /* XCRemoteSwiftPackageReference "Nuke" */,
 			);
 			productRefGroup = ABA793342C1A737100299AD9 /* Products */;
 			projectDirPath = "";
@@ -441,11 +445,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABA793392C1A737100299AD9 /* CharacterListView.swift in Sources */,
-				ABA793A32C1B3C8700299AD9 /* ImageView.swift in Sources */,
 				ABA7937C2C1AA5B500299AD9 /* RequestError.swift in Sources */,
 				AB60AD402C1BA0E00089D3A4 /* RankModel.swift in Sources */,
 				ABA793A82C1B871C00299AD9 /* CharacterDetailView.swift in Sources */,
-				ABA7939F2C1B3C3700299AD9 /* ImageCache.swift in Sources */,
 				ABA7937E2C1AA5B500299AD9 /* RequestType.swift in Sources */,
 				ABA7937D2C1AA5B500299AD9 /* ConcreteNetworkingProvider.swift in Sources */,
 				ABA793832C1AA5D700299AD9 /* Logger.swift in Sources */,
@@ -461,7 +463,8 @@
 				ABA7937B2C1AA5B500299AD9 /* NetworkingProvider.swift in Sources */,
 				ABA793882C1AA5F900299AD9 /* Data+prettyPrintedJSONString.swift in Sources */,
 				ABA793AA2C1B878E00299AD9 /* CharacterDetailReducer.swift in Sources */,
-				ABA793A02C1B3C3700299AD9 /* ImageDownloader.swift in Sources */,
+				ABDD8BB42C1CB40B00B53DE1 /* AsyncLazyImageView.swift in Sources */,
+				ABDD8BB82C1CB51B00B53DE1 /* RoundedCorner.swift in Sources */,
 				ABA793742C1AA41F00299AD9 /* CharacterListDTO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -802,6 +805,14 @@
 				version = 1.11.1;
 			};
 		};
+		ABDD8BAD2C1CA08100B53DE1 /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke";
+			requirement = {
+				kind = exactVersion;
+				version = 12.7.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -809,6 +820,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = ABA793922C1AAA9300299AD9 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
+		};
+		ABDD8BAE2C1CA08100B53DE1 /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ABDD8BAD2C1CA08100B53DE1 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
+		};
+		ABDD8BB02C1CA08100B53DE1 /* NukeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ABDD8BAD2C1CA08100B53DE1 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = NukeUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
