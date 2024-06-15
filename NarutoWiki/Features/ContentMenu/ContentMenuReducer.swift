@@ -7,6 +7,7 @@ struct ContentMenuReducer {
     @Reducer(state: .equatable)
     enum Destination {
         case characterList(CharacterListReducer)
+        case villageList(VillageListReducer)
     }
 
     @ObservableState

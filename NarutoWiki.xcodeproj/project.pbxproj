@@ -39,6 +39,11 @@
 		ABDD8BB82C1CB51B00B53DE1 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDD8BB72C1CB51B00B53DE1 /* RoundedCorner.swift */; };
 		ABDD8BBB2C1CD7A200B53DE1 /* ContentMenuReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDD8BBA2C1CD7A200B53DE1 /* ContentMenuReducer.swift */; };
 		ABDD8BBD2C1CDBBE00B53DE1 /* ContentMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDD8BBC2C1CDBBE00B53DE1 /* ContentMenuView.swift */; };
+		ABDD8BC22C1CFC2500B53DE1 /* VillageListClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDD8BC12C1CFC2500B53DE1 /* VillageListClient.swift */; };
+		ABDD8BC42C1CFC8700B53DE1 /* NarutoAPI+Village.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDD8BC32C1CFC8700B53DE1 /* NarutoAPI+Village.swift */; };
+		ABDD8BC62C1CFE0700B53DE1 /* VillageListDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDD8BC52C1CFE0700B53DE1 /* VillageListDTO.swift */; };
+		ABDD8BC82C1CFFBC00B53DE1 /* VillageListReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDD8BC72C1CFFBC00B53DE1 /* VillageListReducer.swift */; };
+		ABDD8BCA2C1D021E00B53DE1 /* VillageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDD8BC92C1D021E00B53DE1 /* VillageListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +96,11 @@
 		ABDD8BB72C1CB51B00B53DE1 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		ABDD8BBA2C1CD7A200B53DE1 /* ContentMenuReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentMenuReducer.swift; sourceTree = "<group>"; };
 		ABDD8BBC2C1CDBBE00B53DE1 /* ContentMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentMenuView.swift; sourceTree = "<group>"; };
+		ABDD8BC12C1CFC2500B53DE1 /* VillageListClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillageListClient.swift; sourceTree = "<group>"; };
+		ABDD8BC32C1CFC8700B53DE1 /* NarutoAPI+Village.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NarutoAPI+Village.swift"; sourceTree = "<group>"; };
+		ABDD8BC52C1CFE0700B53DE1 /* VillageListDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillageListDTO.swift; sourceTree = "<group>"; };
+		ABDD8BC72C1CFFBC00B53DE1 /* VillageListReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillageListReducer.swift; sourceTree = "<group>"; };
+		ABDD8BC92C1D021E00B53DE1 /* VillageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillageListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +256,7 @@
 				ABA793A62C1B870100299AD9 /* CharacterDetail */,
 				ABA7938F2C1AA76000299AD9 /* CharacterList */,
 				ABDD8BB92C1CD53E00B53DE1 /* ContentMenu */,
+				ABDD8BC02C1CFBFE00B53DE1 /* VillagesList */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -272,6 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				ABA793732C1AA41F00299AD9 /* CharacterListDTO.swift */,
+				ABDD8BC52C1CFE0700B53DE1 /* VillageListDTO.swift */,
 			);
 			path = DTOs;
 			sourceTree = "<group>";
@@ -281,6 +293,7 @@
 			children = (
 				ABA7938A2C1AA6DD00299AD9 /* NarutoAPI.swift */,
 				ABA7938C2C1AA6F400299AD9 /* NarutoAPI+Character.swift */,
+				ABDD8BC32C1CFC8700B53DE1 /* NarutoAPI+Village.swift */,
 			);
 			path = NarutoAPI;
 			sourceTree = "<group>";
@@ -317,6 +330,16 @@
 				ABDD8BBC2C1CDBBE00B53DE1 /* ContentMenuView.swift */,
 			);
 			path = ContentMenu;
+			sourceTree = "<group>";
+		};
+		ABDD8BC02C1CFBFE00B53DE1 /* VillagesList */ = {
+			isa = PBXGroup;
+			children = (
+				ABDD8BC12C1CFC2500B53DE1 /* VillageListClient.swift */,
+				ABDD8BC72C1CFFBC00B53DE1 /* VillageListReducer.swift */,
+				ABDD8BC92C1D021E00B53DE1 /* VillageListView.swift */,
+			);
+			path = VillagesList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -460,11 +483,13 @@
 			files = (
 				ABA793392C1A737100299AD9 /* CharacterListView.swift in Sources */,
 				ABA7937C2C1AA5B500299AD9 /* RequestError.swift in Sources */,
+				ABDD8BC42C1CFC8700B53DE1 /* NarutoAPI+Village.swift in Sources */,
 				AB60AD402C1BA0E00089D3A4 /* RankModel.swift in Sources */,
 				ABDD8BBD2C1CDBBE00B53DE1 /* ContentMenuView.swift in Sources */,
 				ABA793A82C1B871C00299AD9 /* CharacterDetailView.swift in Sources */,
 				ABA7937E2C1AA5B500299AD9 /* RequestType.swift in Sources */,
 				ABA7937D2C1AA5B500299AD9 /* ConcreteNetworkingProvider.swift in Sources */,
+				ABDD8BC62C1CFE0700B53DE1 /* VillageListDTO.swift in Sources */,
 				ABA793832C1AA5D700299AD9 /* Logger.swift in Sources */,
 				ABA793872C1AA5F900299AD9 /* Dictionary+prettyPrintedJSONString.swift in Sources */,
 				ABA793992C1AAC2600299AD9 /* CharacterModel.swift in Sources */,
@@ -472,11 +497,14 @@
 				ABA7938D2C1AA6F400299AD9 /* NarutoAPI+Character.swift in Sources */,
 				ABA793912C1AA89700299AD9 /* CharacterListReducer.swift in Sources */,
 				ABA793372C1A737100299AD9 /* NarutoWikiApp.swift in Sources */,
+				ABDD8BC22C1CFC2500B53DE1 /* VillageListClient.swift in Sources */,
+				ABDD8BC82C1CFFBC00B53DE1 /* VillageListReducer.swift in Sources */,
 				ABA793A52C1B447A00299AD9 /* CharacterPagedModel.swift in Sources */,
 				ABA7938B2C1AA6DD00299AD9 /* NarutoAPI.swift in Sources */,
 				ABA7939B2C1B2F7F00299AD9 /* CharacterListClient.swift in Sources */,
 				ABDD8BBB2C1CD7A200B53DE1 /* ContentMenuReducer.swift in Sources */,
 				ABA7937B2C1AA5B500299AD9 /* NetworkingProvider.swift in Sources */,
+				ABDD8BCA2C1D021E00B53DE1 /* VillageListView.swift in Sources */,
 				ABA793882C1AA5F900299AD9 /* Data+prettyPrintedJSONString.swift in Sources */,
 				ABA793AA2C1B878E00299AD9 /* CharacterDetailReducer.swift in Sources */,
 				ABDD8BB42C1CB40B00B53DE1 /* AsyncLazyImageView.swift in Sources */,

@@ -26,8 +26,7 @@ extension View {
 }
 
 extension View {
-    func roundedCornerFill(lineWidth: CGFloat, 
-                           borderColor: Color,
+    func roundedCornerFill(borderColor: Color,
                            radius: CGFloat,
                            corners: UIRectCorner) -> some View {
 

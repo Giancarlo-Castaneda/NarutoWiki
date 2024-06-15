@@ -15,7 +15,7 @@ struct ContentMenuView: View {
                 let item = GridItem(.flexible(minimum: 50, maximum: 400), spacing: 10)
                 LazyVGrid(columns: Array(repeating: item, count: 2)) {
                     ForEach(store.contents, id: \.id) { item in
-                        NavigationLink(state: ContentMenuReducer.Destination.State.characterList(CharacterListReducer.State())) {
+                        NavigationLink(state: getDesiredDestination(id: item.id)) {
                             VStack {
                                 Text(item.title)
                                     .padding(.top)
@@ -25,8 +25,7 @@ struct ContentMenuView: View {
                                         .padding(10)
                                 }
                             }
-                            .roundedCornerFill(lineWidth: 1,
-                                               borderColor: Color.brown.opacity(0.3),
+                            .roundedCornerFill(borderColor: Color.brown.opacity(0.3),
                                                radius: 10, corners: [.allCorners])
                         }
                     }
@@ -37,10 +36,26 @@ struct ContentMenuView: View {
             switch store.case {
             case let .characterList(store):
                 CharacterListView(store: store)
+
+            case let .villageList(store):
+                VillageListView(store: store)
             }
         }
         .onAppear {
             store.send(.fetchContent)
+        }
+    }
+
+    func getDesiredDestination(id: Int) -> ContentMenuReducer.Destination.State? {
+        switch id {
+        case 1:
+            return ContentMenuReducer.Destination.State.characterList(CharacterListReducer.State())
+
+        case 2:
+            return ContentMenuReducer.Destination.State.villageList(VillageListReducer.State())
+
+        default:
+            return nil
         }
     }
 }

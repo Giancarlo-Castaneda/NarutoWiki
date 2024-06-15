@@ -26,7 +26,8 @@ struct CharacterListView: View {
                                     .padding(.bottom)
                             }
                             .frame(minWidth: side,  minHeight: side)
-                            .roundedCornerFill(lineWidth: 1, borderColor: Color.brown.opacity(0.3), radius: 10, corners: [.allCorners])
+                            .roundedCornerFill(borderColor: Color.brown.opacity(0.3),
+                                               radius: 10, corners: [.allCorners])
 
                             .onTapGesture {
                                 store.send(.detailTapped(character))
