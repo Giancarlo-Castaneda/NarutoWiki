@@ -12,21 +12,24 @@ struct ContentMenuView: View {
                         .frame(maxWidth: 300)
                         .padding(.bottom)
                 }
-                let item = GridItem(.flexible(minimum: 50, maximum: 400), spacing: 10)
-                LazyVGrid(columns: Array(repeating: item, count: 2)) {
-                    ForEach(store.contents, id: \.id) { item in
-                        NavigationLink(state: getDesiredDestination(id: item.id)) {
-                            VStack {
-                                Text(item.title)
-                                    .padding(.top)
-                                    .padding(.horizontal, 10)
-                                if let url = URL(string: item.image) {
-                                    AsyncLazyImageView(url: url)
-                                        .padding(10)
+                ScrollView {
+                    let item = GridItem(.flexible(minimum: 50, maximum: 400), spacing: 10)
+                    LazyVGrid(columns: Array(repeating: item, count: 2)) {
+                        ForEach(store.contents, id: \.id) { item in
+                            NavigationLink(state: getDesiredDestination(id: item.id)) {
+                                VStack {
+                                    Text(item.title)
+                                        .foregroundStyle(Color.primary)
+                                        .padding(.top)
+                                        .padding(.horizontal, 10)
+                                    if let url = URL(string: item.image) {
+                                        AsyncLazyImageView(url: url)
+                                            .padding(10)
+                                    }
                                 }
+                                .roundedCornerFill(borderColor: Color.brown.opacity(0.3),
+                                                   radius: 10, corners: [.allCorners])
                             }
-                            .roundedCornerFill(borderColor: Color.brown.opacity(0.3),
-                                               radius: 10, corners: [.allCorners])
                         }
                     }
                 }
@@ -38,7 +41,7 @@ struct ContentMenuView: View {
                 CharacterListView(store: store)
 
             case let .villageList(store):
-                VillageListView(store: store)
+                CharacterGroupListView(store: store)
             }
         }
         .onAppear {
@@ -52,7 +55,10 @@ struct ContentMenuView: View {
             return ContentMenuReducer.Destination.State.characterList(CharacterListReducer.State())
 
         case 2:
-            return ContentMenuReducer.Destination.State.villageList(VillageListReducer.State())
+            return ContentMenuReducer.Destination.State.villageList(CharacterGroupListReducer.State(expectedUsage: .villages))
+
+        case 3:
+            return ContentMenuReducer.Destination.State.villageList(CharacterGroupListReducer.State(expectedUsage: .clans))
 
         default:
             return nil

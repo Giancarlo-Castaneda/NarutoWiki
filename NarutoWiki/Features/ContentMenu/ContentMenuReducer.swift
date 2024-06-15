@@ -7,7 +7,7 @@ struct ContentMenuReducer {
     @Reducer(state: .equatable)
     enum Destination {
         case characterList(CharacterListReducer)
-        case villageList(VillageListReducer)
+        case villageList(CharacterGroupListReducer)
     }
 
     @ObservableState
@@ -30,7 +30,8 @@ struct ContentMenuReducer {
             case .fetchContent:
                 let contents = [
                     ContentItemModel(id: 1, title: "Characters", image: "https://wallpapers.com/images/featured/naruto-characters-peo1d7c1aqugno3e.jpg"),
-                    ContentItemModel(id: 2, title: "Villages", image: "https://animeipics.wordpress.com/wp-content/uploads/2013/08/6f484-fivegreatninjacountriesmap-animeipics.png")
+                    ContentItemModel(id: 2, title: "Villages", image: "https://animeipics.wordpress.com/wp-content/uploads/2013/08/6f484-fivegreatninjacountriesmap-animeipics.png"),
+                    ContentItemModel(id: 3, title: "Clans", image: "https://qph.cf2.quoracdn.net/main-qimg-c9489a8c8ac8fb654deb3d495910200c-lq")
                 ]
                 state.isLoading = true
                 return .run { send in

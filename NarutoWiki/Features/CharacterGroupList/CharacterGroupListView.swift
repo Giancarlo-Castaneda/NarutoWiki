@@ -1,8 +1,8 @@
 import ComposableArchitecture
 import SwiftUI
 
-struct VillageListView: View {
-    var store: StoreOf<VillageListReducer>
+struct CharacterGroupListView: View {
+    var store: StoreOf<CharacterGroupListReducer>
 
     var body: some View {
         ScrollView {
@@ -13,7 +13,7 @@ struct VillageListView: View {
                         Text(village.name)
                             .font(.headline)
                             .frame(maxWidth: .infinity, alignment: Alignment.leading)
-                        Text("Current shinobis: \(village.characters.count)")
+                        Text("\(store.subtitleDescription) \(village.characters.count)")
                             .font(.subheadline)
                             .frame(maxWidth: .infinity, alignment: Alignment.leading)
                     }
@@ -41,7 +41,7 @@ struct VillageListView: View {
 }
 
 #Preview {
-    VillageListView(store: Store(initialState: VillageListReducer.State()) {
-        VillageListReducer()
+    CharacterGroupListView(store: Store(initialState: CharacterGroupListReducer.State(expectedUsage: .villages)) {
+        CharacterGroupListReducer()
     })
 }
