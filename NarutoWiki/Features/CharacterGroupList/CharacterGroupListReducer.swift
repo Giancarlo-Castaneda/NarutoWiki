@@ -70,7 +70,7 @@ struct CharacterGroupListReducer {
             return try await characterGroupClient.fetchVillages(page, pageSize)
 
         case .teams:
-            return try await characterGroupClient.fetchVillages(page, pageSize)
+            return try await characterGroupClient.fetchTeams(page, pageSize)
         }
     }
 

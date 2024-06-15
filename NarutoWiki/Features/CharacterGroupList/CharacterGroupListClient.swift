@@ -3,6 +3,7 @@ import ComposableArchitecture
 struct CharacterGroupListClient {
     var fetchVillages: (Int, Int) async throws -> CharacterGroupPagedDTO
     var fetchClans: (Int, Int) async throws -> CharacterGroupPagedDTO
+    var fetchTeams: (Int, Int) async throws -> CharacterGroupPagedDTO
 }
 
 extension CharacterGroupListClient: DependencyKey {
@@ -11,7 +12,10 @@ extension CharacterGroupListClient: DependencyKey {
             let endpoint = NarutoAPI.villageListGET(page: page, pageSize: pageSize)
             return try await networkingProvider.sendRequest(endpoint: endpoint, responseModel: CharacterGroupPagedDTO.self)
         }, fetchClans: { page, pageSize in
-            let endpoint = NarutoAPI.clansListGET(page: page, pageSize: pageSize)
+            let endpoint = NarutoAPI.clanListGET(page: page, pageSize: pageSize)
+            return try await networkingProvider.sendRequest(endpoint: endpoint, responseModel: CharacterGroupPagedDTO.self)
+        }, fetchTeams: { page, pageSize in
+            let endpoint = NarutoAPI.teamListGET(page: page, pageSize: pageSize)
             return try await networkingProvider.sendRequest(endpoint: endpoint, responseModel: CharacterGroupPagedDTO.self)
         }
     )

@@ -40,7 +40,7 @@
 		ABDD8BBB2C1CD7A200B53DE1 /* ContentMenuReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDD8BBA2C1CD7A200B53DE1 /* ContentMenuReducer.swift */; };
 		ABDD8BBD2C1CDBBE00B53DE1 /* ContentMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDD8BBC2C1CDBBE00B53DE1 /* ContentMenuView.swift */; };
 		ABDD8BC22C1CFC2500B53DE1 /* CharacterGroupListClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDD8BC12C1CFC2500B53DE1 /* CharacterGroupListClient.swift */; };
-		ABDD8BC42C1CFC8700B53DE1 /* NarutoAPI+Village.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDD8BC32C1CFC8700B53DE1 /* NarutoAPI+Village.swift */; };
+		ABDD8BC42C1CFC8700B53DE1 /* NarutoAPI+CharacterGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDD8BC32C1CFC8700B53DE1 /* NarutoAPI+CharacterGroup.swift */; };
 		ABDD8BC62C1CFE0700B53DE1 /* CharacterGroupPagedDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDD8BC52C1CFE0700B53DE1 /* CharacterGroupPagedDTO.swift */; };
 		ABDD8BC82C1CFFBC00B53DE1 /* CharacterGroupListReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDD8BC72C1CFFBC00B53DE1 /* CharacterGroupListReducer.swift */; };
 		ABDD8BCA2C1D021E00B53DE1 /* CharacterGroupListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDD8BC92C1D021E00B53DE1 /* CharacterGroupListView.swift */; };
@@ -97,7 +97,7 @@
 		ABDD8BBA2C1CD7A200B53DE1 /* ContentMenuReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentMenuReducer.swift; sourceTree = "<group>"; };
 		ABDD8BBC2C1CDBBE00B53DE1 /* ContentMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentMenuView.swift; sourceTree = "<group>"; };
 		ABDD8BC12C1CFC2500B53DE1 /* CharacterGroupListClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterGroupListClient.swift; sourceTree = "<group>"; };
-		ABDD8BC32C1CFC8700B53DE1 /* NarutoAPI+Village.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NarutoAPI+Village.swift"; sourceTree = "<group>"; };
+		ABDD8BC32C1CFC8700B53DE1 /* NarutoAPI+CharacterGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NarutoAPI+CharacterGroup.swift"; sourceTree = "<group>"; };
 		ABDD8BC52C1CFE0700B53DE1 /* CharacterGroupPagedDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterGroupPagedDTO.swift; sourceTree = "<group>"; };
 		ABDD8BC72C1CFFBC00B53DE1 /* CharacterGroupListReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterGroupListReducer.swift; sourceTree = "<group>"; };
 		ABDD8BC92C1D021E00B53DE1 /* CharacterGroupListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterGroupListView.swift; sourceTree = "<group>"; };
@@ -293,7 +293,7 @@
 			children = (
 				ABA7938A2C1AA6DD00299AD9 /* NarutoAPI.swift */,
 				ABA7938C2C1AA6F400299AD9 /* NarutoAPI+Character.swift */,
-				ABDD8BC32C1CFC8700B53DE1 /* NarutoAPI+Village.swift */,
+				ABDD8BC32C1CFC8700B53DE1 /* NarutoAPI+CharacterGroup.swift */,
 			);
 			path = NarutoAPI;
 			sourceTree = "<group>";
@@ -483,7 +483,7 @@
 			files = (
 				ABA793392C1A737100299AD9 /* CharacterListView.swift in Sources */,
 				ABA7937C2C1AA5B500299AD9 /* RequestError.swift in Sources */,
-				ABDD8BC42C1CFC8700B53DE1 /* NarutoAPI+Village.swift in Sources */,
+				ABDD8BC42C1CFC8700B53DE1 /* NarutoAPI+CharacterGroup.swift in Sources */,
 				AB60AD402C1BA0E00089D3A4 /* RankModel.swift in Sources */,
 				ABDD8BBD2C1CDBBE00B53DE1 /* ContentMenuView.swift in Sources */,
 				ABA793A82C1B871C00299AD9 /* CharacterDetailView.swift in Sources */,

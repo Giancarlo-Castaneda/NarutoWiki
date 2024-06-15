@@ -60,6 +60,9 @@ struct ContentMenuView: View {
         case 3:
             return ContentMenuReducer.Destination.State.villageList(CharacterGroupListReducer.State(expectedUsage: .clans))
 
+        case 4:
+            return ContentMenuReducer.Destination.State.villageList(CharacterGroupListReducer.State(expectedUsage: .teams))
+
         default:
             return nil
         }

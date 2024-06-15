@@ -31,7 +31,8 @@ struct ContentMenuReducer {
                 let contents = [
                     ContentItemModel(id: 1, title: "Characters", image: "https://wallpapers.com/images/featured/naruto-characters-peo1d7c1aqugno3e.jpg"),
                     ContentItemModel(id: 2, title: "Villages", image: "https://animeipics.wordpress.com/wp-content/uploads/2013/08/6f484-fivegreatninjacountriesmap-animeipics.png"),
-                    ContentItemModel(id: 3, title: "Clans", image: "https://qph.cf2.quoracdn.net/main-qimg-c9489a8c8ac8fb654deb3d495910200c-lq")
+                    ContentItemModel(id: 3, title: "Clans", image: "https://qph.cf2.quoracdn.net/main-qimg-c9489a8c8ac8fb654deb3d495910200c-lq"),
+                    ContentItemModel(id: 4, title: "Teams", image: "https://i.redd.it/which-design-of-each-naruto-team-7-is-member-is-your-v0-qr386ava85wa1.jpg?width=550&format=pjpg&auto=webp&s=d11e9a938248911d84b411ad6b91177a3c79e752")
                 ]
                 state.isLoading = true
                 return .run { send in
