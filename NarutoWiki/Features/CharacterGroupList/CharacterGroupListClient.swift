@@ -4,6 +4,7 @@ struct CharacterGroupListClient {
     var fetchVillages: (Int, Int) async throws -> CharacterGroupPagedDTO
     var fetchClans: (Int, Int) async throws -> CharacterGroupPagedDTO
     var fetchTeams: (Int, Int) async throws -> CharacterGroupPagedDTO
+    var fetchKekkeiGenkai: (Int, Int) async throws -> CharacterGroupPagedDTO
 }
 
 extension CharacterGroupListClient: DependencyKey {
@@ -16,6 +17,9 @@ extension CharacterGroupListClient: DependencyKey {
             return try await networkingProvider.sendRequest(endpoint: endpoint, responseModel: CharacterGroupPagedDTO.self)
         }, fetchTeams: { page, pageSize in
             let endpoint = NarutoAPI.teamListGET(page: page, pageSize: pageSize)
+            return try await networkingProvider.sendRequest(endpoint: endpoint, responseModel: CharacterGroupPagedDTO.self)
+        }, fetchKekkeiGenkai: { page, pageSize in
+            let endpoint = NarutoAPI.kekkeiGenkaiListGET(page: page, pageSize: pageSize)
             return try await networkingProvider.sendRequest(endpoint: endpoint, responseModel: CharacterGroupPagedDTO.self)
         }
     )
