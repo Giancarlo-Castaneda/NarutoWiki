@@ -5,7 +5,6 @@ struct CharacterListView: View {
     @Bindable var store: StoreOf<CharacterListReducer>
 
     var body: some View {
-//        NavigationStack {
             GeometryReader { geometry in
                 ScrollView {
                     let spacing: CGFloat = 10
@@ -51,7 +50,6 @@ struct CharacterListView: View {
                 }
                 .navigationTitle("Personajes")
             }
-//        }
         .sheet(item: $store.scope(state: \.destination?.characterDetail,
                                   action: \.destination.characterDetail)
         ) { characterDetailStore in

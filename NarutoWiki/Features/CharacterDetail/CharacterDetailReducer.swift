@@ -10,6 +10,7 @@ struct CharacterDetailReducer {
 
     enum Action {
         case setDetail(CharacterModel)
+        case closeDetailButton
     }
 
     @Dependency(\.dismiss) var dismiss
@@ -20,6 +21,9 @@ struct CharacterDetailReducer {
             case let .setDetail(character):
                 state.detail = character
                 return .none
+
+            case .closeDetailButton:
+                return .run { _ in await self.dismiss() }
             }
         }
     }

@@ -436,6 +436,15 @@ struct CharacterDetailView: View {
 
             }
         }
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    store.send(.closeDetailButton)
+                } label: {
+                    Image(systemName: "x.circle")
+                }
+            }
+        }
     }
 }
 
