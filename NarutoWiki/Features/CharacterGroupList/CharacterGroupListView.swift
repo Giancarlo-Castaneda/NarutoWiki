@@ -9,16 +9,19 @@ struct CharacterGroupListView: View {
             let item = [GridItem(.flexible(minimum: 20, maximum: 400))]
             LazyVGrid(columns: item) {
                 ForEach(store.villages, id: \.id) { village in
-                    VStack {
-                        Text(village.name)
-                            .font(.headline)
-                            .frame(maxWidth: .infinity, alignment: Alignment.leading)
-                        Text("\(store.subtitleDescription) \(village.characters.count)")
-                            .font(.subheadline)
-                            .frame(maxWidth: .infinity, alignment: Alignment.leading)
-                    }
-                    .padding(10)
-                    .roundedCornerFill(borderColor: Color.blue.opacity(0.3), radius: 10, corners: [.allCorners])
+                        VStack {
+                            Text(village.name)
+                                .font(.headline)
+                                .frame(maxWidth: .infinity, alignment: Alignment.leading)
+                            Text("\(store.subtitleDescription) \(village.characters.count)")
+                                .font(.subheadline)
+                                .frame(maxWidth: .infinity, alignment: Alignment.leading)
+                        }
+                        .padding(10)
+                        .roundedCornerFill(borderColor: Color.blue.opacity(0.3), radius: 10, corners: [.allCorners])
+                        .onTapGesture {
+                            store.send(.characterGroupTapped(village.characters, village.name))
+                        }
                 }
                 if store.isLoading {
                     ProgressView()
@@ -33,7 +36,7 @@ struct CharacterGroupListView: View {
             }
             .padding(.horizontal)
         }
-        .navigationTitle("Hidden Villages")
+        .navigationTitle(store.state.expectedUsage.rawValue.capitalized)
         .onAppear {
             store.send(.fetchVillageList)
         }

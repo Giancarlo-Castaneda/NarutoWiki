@@ -15,14 +15,15 @@ struct CharacterGroupListReducer {
         var subtitleDescription: String = ""
     }
 
-    enum ExpectedUsage {
+    enum ExpectedUsage: String {
         case villages
         case clans
-        case kekkeiGenkais
+        case kekkeiGenkais = "kekkei Genkai"
         case teams
     }
 
     enum Action {
+        case characterGroupTapped([Int], String)
         case fetchVillageList
         case characterGroupListResponse(CharacterGroupPagedDTO)
     }
@@ -53,6 +54,9 @@ struct CharacterGroupListReducer {
                 state.villages.append(contentsOf: mapResult(result, forUsage: state.expectedUsage))
                 state.isLoading = false
                 state.subtitleDescription = subtitle(expectedUsage: state.expectedUsage)
+                return .none
+
+            case .characterGroupTapped:
                 return .none
             }
         }

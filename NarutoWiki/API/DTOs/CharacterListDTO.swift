@@ -22,6 +22,30 @@ struct CharacterDTO: Codable {
     let uniqueTraits: [String]?
 }
 
+enum SingleOrArray<T: Decodable>: Decodable {
+    case single(T)
+    case array([T])
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+
+        if let single = try? container.decode(T.self) {
+            self = .single(single)
+        } else if let array = try? container.decode([T].self) {
+            self = .array(array)
+        } else {
+            throw DecodingError.typeMismatch(
+                SingleOrArray.self,
+                DecodingError.Context(
+                    codingPath: decoder.codingPath,
+                    debugDescription: "Expected to decode Single or Array"
+                )
+            )
+        }
+    }
+}
+
+
 enum VariableRank: Codable, Equatable {
     case rank(Rank?)
     case stringArray([String])

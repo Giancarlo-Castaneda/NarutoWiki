@@ -4,14 +4,15 @@ import Foundation
 @Reducer
 struct ContentMenuReducer {
 
-    @Reducer(state: .equatable)
+    @Reducer
     enum Destination {
         case characterList(CharacterListReducer)
         case villageList(CharacterGroupListReducer)
+        case characterListIds(CharacterListByIdsReducer)
     }
 
     @ObservableState
-    struct State: Equatable {
+    struct State {
         var path = StackState<Destination.State>()
         var contents: [ContentItemModel] = []
         var isLoading = false
@@ -46,8 +47,15 @@ struct ContentMenuReducer {
                 state.isLoading = false
                 return .none
 
-            case .path(_):
-                return .none
+            case let .path(action):
+                switch action {
+                case let .element(_, .villageList(.characterGroupTapped(ids, title))):
+                    state.path.append(.characterListIds(CharacterListByIdsReducer.State(ids: ids, title: title)))
+                    return .none
+
+                default:
+                    return .none
+                }
             }
         }
         .forEach(\.path, action: \.path)

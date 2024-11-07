@@ -33,6 +33,9 @@
 		ABA793A52C1B447A00299AD9 /* CharacterPagedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA793A42C1B447A00299AD9 /* CharacterPagedModel.swift */; };
 		ABA793A82C1B871C00299AD9 /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA793A72C1B871C00299AD9 /* CharacterDetailView.swift */; };
 		ABA793AA2C1B878E00299AD9 /* CharacterDetailReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA793A92C1B878E00299AD9 /* CharacterDetailReducer.swift */; };
+		ABB55F802C20F6FB00815D43 /* CharacterListByIdsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB55F7F2C20F6FB00815D43 /* CharacterListByIdsClient.swift */; };
+		ABB55F822C20F99D00815D43 /* CharacterListByIdsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB55F812C20F99D00815D43 /* CharacterListByIdsReducer.swift */; };
+		ABB55F842C210BD900815D43 /* CharacterListIdsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB55F832C210BD900815D43 /* CharacterListIdsView.swift */; };
 		ABDD8BAF2C1CA08100B53DE1 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = ABDD8BAE2C1CA08100B53DE1 /* Nuke */; };
 		ABDD8BB12C1CA08100B53DE1 /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = ABDD8BB02C1CA08100B53DE1 /* NukeUI */; };
 		ABDD8BB42C1CB40B00B53DE1 /* AsyncLazyImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDD8BB32C1CB40B00B53DE1 /* AsyncLazyImageView.swift */; };
@@ -92,6 +95,9 @@
 		ABA793A42C1B447A00299AD9 /* CharacterPagedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterPagedModel.swift; sourceTree = "<group>"; };
 		ABA793A72C1B871C00299AD9 /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
 		ABA793A92C1B878E00299AD9 /* CharacterDetailReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailReducer.swift; sourceTree = "<group>"; };
+		ABB55F7F2C20F6FB00815D43 /* CharacterListByIdsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListByIdsClient.swift; sourceTree = "<group>"; };
+		ABB55F812C20F99D00815D43 /* CharacterListByIdsReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListByIdsReducer.swift; sourceTree = "<group>"; };
+		ABB55F832C210BD900815D43 /* CharacterListIdsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListIdsView.swift; sourceTree = "<group>"; };
 		ABDD8BB32C1CB40B00B53DE1 /* AsyncLazyImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncLazyImageView.swift; sourceTree = "<group>"; };
 		ABDD8BB72C1CB51B00B53DE1 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		ABDD8BBA2C1CD7A200B53DE1 /* ContentMenuReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentMenuReducer.swift; sourceTree = "<group>"; };
@@ -255,6 +261,7 @@
 			children = (
 				ABA793A62C1B870100299AD9 /* CharacterDetail */,
 				ABDD8BC02C1CFBFE00B53DE1 /* CharacterGroupList */,
+				ABB55F7E2C20F5BA00815D43 /* CharacterIdsList */,
 				ABA7938F2C1AA76000299AD9 /* CharacterList */,
 				ABDD8BB92C1CD53E00B53DE1 /* ContentMenu */,
 			);
@@ -305,6 +312,16 @@
 				ABA793A92C1B878E00299AD9 /* CharacterDetailReducer.swift */,
 			);
 			path = CharacterDetail;
+			sourceTree = "<group>";
+		};
+		ABB55F7E2C20F5BA00815D43 /* CharacterIdsList */ = {
+			isa = PBXGroup;
+			children = (
+				ABB55F7F2C20F6FB00815D43 /* CharacterListByIdsClient.swift */,
+				ABB55F812C20F99D00815D43 /* CharacterListByIdsReducer.swift */,
+				ABB55F832C210BD900815D43 /* CharacterListIdsView.swift */,
+			);
+			path = CharacterIdsList;
 			sourceTree = "<group>";
 		};
 		ABDD8BB22C1CB3D200B53DE1 /* UI */ = {
@@ -498,6 +515,7 @@
 				ABA793912C1AA89700299AD9 /* CharacterListReducer.swift in Sources */,
 				ABA793372C1A737100299AD9 /* NarutoWikiApp.swift in Sources */,
 				ABDD8BC22C1CFC2500B53DE1 /* CharacterGroupListClient.swift in Sources */,
+				ABB55F822C20F99D00815D43 /* CharacterListByIdsReducer.swift in Sources */,
 				ABDD8BC82C1CFFBC00B53DE1 /* CharacterGroupListReducer.swift in Sources */,
 				ABA793A52C1B447A00299AD9 /* CharacterPagedModel.swift in Sources */,
 				ABA7938B2C1AA6DD00299AD9 /* NarutoAPI.swift in Sources */,
@@ -505,8 +523,10 @@
 				ABDD8BBB2C1CD7A200B53DE1 /* ContentMenuReducer.swift in Sources */,
 				ABA7937B2C1AA5B500299AD9 /* NetworkingProvider.swift in Sources */,
 				ABDD8BCA2C1D021E00B53DE1 /* CharacterGroupListView.swift in Sources */,
+				ABB55F842C210BD900815D43 /* CharacterListIdsView.swift in Sources */,
 				ABA793882C1AA5F900299AD9 /* Data+prettyPrintedJSONString.swift in Sources */,
 				ABA793AA2C1B878E00299AD9 /* CharacterDetailReducer.swift in Sources */,
+				ABB55F802C20F6FB00815D43 /* CharacterListByIdsClient.swift in Sources */,
 				ABDD8BB42C1CB40B00B53DE1 /* AsyncLazyImageView.swift in Sources */,
 				ABDD8BB82C1CB51B00B53DE1 /* RoundedCorner.swift in Sources */,
 				ABA793742C1AA41F00299AD9 /* CharacterListDTO.swift in Sources */,

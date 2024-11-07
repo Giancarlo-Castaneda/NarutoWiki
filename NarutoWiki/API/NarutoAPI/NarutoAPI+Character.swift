@@ -10,4 +10,10 @@ extension NarutoAPI {
 
         return .init(path: "/characters", method: .get, body: nil, queryItems: queryItems)
     }
+
+    static func characterListGET(byIds ids: [Int]) -> NarutoAPI {
+        let idsParam = ids.map { "\($0)" }.joined(separator: ",")
+
+        return .init(path: "/characters/\(idsParam)", method: .get, body: nil)
+    }
 }

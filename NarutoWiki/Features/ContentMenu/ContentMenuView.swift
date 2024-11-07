@@ -42,6 +42,9 @@ struct ContentMenuView: View {
 
             case let .villageList(store):
                 CharacterGroupListView(store: store)
+
+            case let .characterListIds(store):
+                CharacterListIdsView(store: store)
             }
         }
         .onAppear {
@@ -52,19 +55,19 @@ struct ContentMenuView: View {
     func getDesiredDestination(id: Int) -> ContentMenuReducer.Destination.State? {
         switch id {
         case 1:
-            return ContentMenuReducer.Destination.State.characterList(CharacterListReducer.State())
+            return .characterList(CharacterListReducer.State())
 
         case 2:
-            return ContentMenuReducer.Destination.State.villageList(CharacterGroupListReducer.State(expectedUsage: .villages))
+            return .villageList(CharacterGroupListReducer.State(expectedUsage: .villages))
 
         case 3:
-            return ContentMenuReducer.Destination.State.villageList(CharacterGroupListReducer.State(expectedUsage: .clans))
+            return .villageList(CharacterGroupListReducer.State(expectedUsage: .clans))
 
         case 4:
-            return ContentMenuReducer.Destination.State.villageList(CharacterGroupListReducer.State(expectedUsage: .teams))
+            return .villageList(CharacterGroupListReducer.State(expectedUsage: .teams))
 
         case 5:
-            return ContentMenuReducer.Destination.State.villageList(CharacterGroupListReducer.State(expectedUsage: .kekkeiGenkais))
+            return .villageList(CharacterGroupListReducer.State(expectedUsage: .kekkeiGenkais))
 
         default:
             return nil
