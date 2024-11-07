@@ -48,7 +48,7 @@ struct CharacterListView: View {
                 .onAppear {
                     store.send(.fetchCharacterList)
                 }
-                .navigationTitle("Personajes")
+                .navigationTitle(store.state.usage.rawValue.capitalized)
             }
         .sheet(item: $store.scope(state: \.destination?.characterDetail,
                                   action: \.destination.characterDetail)
@@ -61,7 +61,7 @@ struct CharacterListView: View {
 }
 
 #Preview {
-    CharacterListView(store: Store(initialState: CharacterListReducer.State()) {
+    CharacterListView(store: Store(initialState: CharacterListReducer.State(usage: .allCharacters)) {
         CharacterListReducer()
     })
 }

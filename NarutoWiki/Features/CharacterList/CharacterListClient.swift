@@ -3,12 +3,18 @@ import Foundation
 
 struct CharacterListClient {
     var fetchCharacters: (Int, Int) async throws -> CharacterPagedModel
+    var fetchKara: (Int, Int) async throws -> CharacterPagedModel
 }
 
 extension CharacterListClient: DependencyKey {
     static let liveValue = Self (
         fetchCharacters: { page, limit in
             let endpoint = NarutoAPI.characterListGET(page: page, resultsPerPage: limit)
+            let dto = try await networkingProvider.sendRequest(endpoint: endpoint, responseModel: CharacterListDTO.self)
+
+            return CharacterPagedModel(dto)
+        }, fetchKara: { page, limit in
+            let endpoint = NarutoAPI.karaListGET(page: page, limit: limit)
             let dto = try await networkingProvider.sendRequest(endpoint: endpoint, responseModel: CharacterListDTO.self)
 
             return CharacterPagedModel(dto)

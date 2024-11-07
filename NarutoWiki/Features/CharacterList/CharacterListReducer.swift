@@ -12,6 +12,12 @@ struct CharacterListReducer {
         var page: Int = 1
         var characters: [CharacterModel] = []
         var isLoading = false
+        var usage: Usage
+    }
+
+    enum Usage: String {
+        case allCharacters = "Characters"
+        case kara
     }
 
     enum Action {
@@ -31,15 +37,16 @@ struct CharacterListReducer {
                     (state.characters.count < state.totalCharacters || state.page == 1) && !state.isLoading
                 else { return .none}
 
+                let usage = state.usage
                 state.isLoading = true
                 return .run { [page = state.page] send in
-                    try await send(.characterListResponse(self.characterClient.fetchCharacters(page, perPage)))
+                    try await send(.characterListResponse(fetchCharacters(for: usage, page: page, perPage: perPage)))
                 }
 
             case let .characterListResponse(result):
                 state.totalCharacters = result.totalResults
                 state.page += 1
-                state.characters.append(contentsOf: result.characters)
+                state.characters.append(contentsOf: mapCharacters(result, for: state.usage))
                 state.isLoading = false
                 return .none
 
@@ -54,6 +61,26 @@ struct CharacterListReducer {
             }
         }
         .ifLet(\.$destination, action: \.destination)
+    }
+
+    private func fetchCharacters(for usage: Usage, page: Int, perPage: Int) async throws -> CharacterPagedModel {
+        switch usage {
+        case .allCharacters:
+            return try await characterClient.fetchCharacters(page, perPage)
+
+        case .kara:
+            return try await characterClient.fetchKara(page, perPage)
+        }
+    }
+
+    private func mapCharacters(_ response: CharacterPagedModel, for usage: Usage) -> [CharacterModel] {
+        switch usage {
+        case .allCharacters:
+            return response.characters ?? []
+
+        case .kara:
+            return response.kara ?? []
+        }
     }
 }
 

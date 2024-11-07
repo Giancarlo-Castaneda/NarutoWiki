@@ -55,7 +55,7 @@ struct ContentMenuView: View {
     func getDesiredDestination(id: Int) -> ContentMenuReducer.Destination.State? {
         switch id {
         case 1:
-            return .characterList(CharacterListReducer.State())
+            return .characterList(CharacterListReducer.State(usage: .allCharacters))
 
         case 2:
             return .villageList(CharacterGroupListReducer.State(expectedUsage: .villages))
@@ -68,6 +68,9 @@ struct ContentMenuView: View {
 
         case 5:
             return .villageList(CharacterGroupListReducer.State(expectedUsage: .kekkeiGenkais))
+
+        case 6:
+            return .characterList(CharacterListReducer.State(usage: .kara))
 
         default:
             return nil

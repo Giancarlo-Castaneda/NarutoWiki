@@ -16,4 +16,13 @@ extension NarutoAPI {
 
         return .init(path: "/characters/\(idsParam)", method: .get, body: nil)
     }
+
+    static func karaListGET(page: Int, limit pageSize: Int) -> NarutoAPI {
+        let query = [
+            URLQueryItem(name: "page", value: "\(page)"),
+            URLQueryItem(name: "limit", value: "\(pageSize)")
+        ]
+
+        return .init(path: "/kara", method: .get, body: nil, queryItems: query)
+    }
 }

@@ -2,7 +2,8 @@ import Foundation
 
 // MARK: - CharacterListResponse
 struct CharacterListDTO: Codable {
-    let characters: [CharacterDTO]
+    let characters: [CharacterDTO]?
+    let kara: [CharacterDTO]?
     let currentPage, pageSize, total: Int
 }
 

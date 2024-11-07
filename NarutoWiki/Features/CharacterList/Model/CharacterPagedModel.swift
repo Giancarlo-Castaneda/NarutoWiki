@@ -1,7 +1,8 @@
 import Foundation
 
 struct CharacterPagedModel {
-    let characters: [CharacterModel]
+    let characters: [CharacterModel]?
+    let kara: [CharacterModel]?
     let currentPage: Int
     let totalResults: Int
 }
@@ -9,7 +10,8 @@ struct CharacterPagedModel {
 extension CharacterPagedModel {
 
     init(_ dto: CharacterListDTO) {
-        self.init(characters: dto.characters.map { CharacterModel($0) },
+        self.init(characters: dto.characters?.compactMap { CharacterModel($0) },
+                  kara: dto.kara?.compactMap { CharacterModel($0) },
                   currentPage: dto.currentPage,
                   totalResults: dto.total)
     }
