@@ -3,8 +3,12 @@ import SwiftUI
 
 struct ContentMenuView: View {
     @Bindable var store : StoreOf<ContentMenuReducer>
+    let columns: Int = 2
 
     var body: some View {
+        let screenWidth = UIScreen.main.bounds.width
+        let itemWidth = (screenWidth - CGFloat((columns + 1) * 10)) / CGFloat(columns)
+
         NavigationStack(path: $store.scope(state: \.path, action: \.path)) {
             VStack {
                 if let titleImage = store.titleImage {
@@ -13,8 +17,10 @@ struct ContentMenuView: View {
                         .padding(.bottom)
                 }
                 ScrollView {
-                    let item = GridItem(.flexible(minimum: 50, maximum: 400), spacing: 10)
-                    LazyVGrid(columns: Array(repeating: item, count: 2)) {
+                    LazyVGrid(
+                        columns: Array(repeating: GridItem(.fixed(itemWidth), spacing: 10), count: columns),
+                        spacing: 10
+                    ) {
                         ForEach(store.contents, id: \.id) { item in
                             NavigationLink(state: getDesiredDestination(id: item.id)) {
                                 VStack {
@@ -24,6 +30,7 @@ struct ContentMenuView: View {
                                         .padding(.horizontal, 10)
                                     if let url = URL(string: item.image) {
                                         AsyncLazyImageView(url: url)
+                                            .frame(width: itemWidth - 20, height: itemWidth * 0.6)
                                             .padding(10)
                                     }
                                 }
@@ -34,7 +41,6 @@ struct ContentMenuView: View {
                     }
                 }
                 .scrollIndicators(.hidden)
-                .padding(.horizontal, 10)
             }
         } destination: { store in
             switch store.case {
