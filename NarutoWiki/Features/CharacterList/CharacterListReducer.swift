@@ -18,6 +18,7 @@ struct CharacterListReducer {
     enum Usage: String {
         case allCharacters = "Characters"
         case kara
+        case akatsuki
     }
 
     enum Action {
@@ -70,6 +71,9 @@ struct CharacterListReducer {
 
         case .kara:
             return try await characterClient.fetchKara(page, perPage)
+
+        case .akatsuki:
+            return try await characterClient.fetchAkatsuki(page, perPage)
         }
     }
 
@@ -80,6 +84,9 @@ struct CharacterListReducer {
 
         case .kara:
             return response.kara ?? []
+
+        case .akatsuki:
+            return response.akatsuki ?? []
         }
     }
 }

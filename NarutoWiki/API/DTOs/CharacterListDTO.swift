@@ -4,6 +4,7 @@ import Foundation
 struct CharacterListDTO: Codable {
     let characters: [CharacterDTO]?
     let kara: [CharacterDTO]?
+    let akatsuki: [CharacterDTO]?
     let currentPage, pageSize, total: Int
 }
 

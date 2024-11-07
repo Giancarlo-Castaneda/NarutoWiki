@@ -72,6 +72,9 @@ struct ContentMenuView: View {
         case 6:
             return .characterList(CharacterListReducer.State(usage: .kara))
 
+        case 7:
+            return .characterList(CharacterListReducer.State(usage: .akatsuki))
+
         default:
             return nil
         }
