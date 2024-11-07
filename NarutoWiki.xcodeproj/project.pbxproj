@@ -36,6 +36,7 @@
 		ABB55F802C20F6FB00815D43 /* CharacterListByIdsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB55F7F2C20F6FB00815D43 /* CharacterListByIdsClient.swift */; };
 		ABB55F822C20F99D00815D43 /* CharacterListByIdsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB55F812C20F99D00815D43 /* CharacterListByIdsReducer.swift */; };
 		ABB55F842C210BD900815D43 /* CharacterListIdsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB55F832C210BD900815D43 /* CharacterListIdsView.swift */; };
+		ABD7E5502CDC6E1F003D05A2 /* ParallaxHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD7E54F2CDC6DEB003D05A2 /* ParallaxHeader.swift */; };
 		ABDD8BAF2C1CA08100B53DE1 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = ABDD8BAE2C1CA08100B53DE1 /* Nuke */; };
 		ABDD8BB12C1CA08100B53DE1 /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = ABDD8BB02C1CA08100B53DE1 /* NukeUI */; };
 		ABDD8BB42C1CB40B00B53DE1 /* AsyncLazyImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDD8BB32C1CB40B00B53DE1 /* AsyncLazyImageView.swift */; };
@@ -98,6 +99,7 @@
 		ABB55F7F2C20F6FB00815D43 /* CharacterListByIdsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListByIdsClient.swift; sourceTree = "<group>"; };
 		ABB55F812C20F99D00815D43 /* CharacterListByIdsReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListByIdsReducer.swift; sourceTree = "<group>"; };
 		ABB55F832C210BD900815D43 /* CharacterListIdsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListIdsView.swift; sourceTree = "<group>"; };
+		ABD7E54F2CDC6DEB003D05A2 /* ParallaxHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxHeader.swift; sourceTree = "<group>"; };
 		ABDD8BB32C1CB40B00B53DE1 /* AsyncLazyImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncLazyImageView.swift; sourceTree = "<group>"; };
 		ABDD8BB72C1CB51B00B53DE1 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		ABDD8BBA2C1CD7A200B53DE1 /* ContentMenuReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentMenuReducer.swift; sourceTree = "<group>"; };
@@ -327,6 +329,7 @@
 		ABDD8BB22C1CB3D200B53DE1 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				ABD7E54F2CDC6DEB003D05A2 /* ParallaxHeader.swift */,
 				ABDD8BB32C1CB40B00B53DE1 /* AsyncLazyImageView.swift */,
 			);
 			path = UI;
@@ -510,6 +513,7 @@
 				ABA793832C1AA5D700299AD9 /* Logger.swift in Sources */,
 				ABA793872C1AA5F900299AD9 /* Dictionary+prettyPrintedJSONString.swift in Sources */,
 				ABA793992C1AAC2600299AD9 /* CharacterModel.swift in Sources */,
+				ABD7E5502CDC6E1F003D05A2 /* ParallaxHeader.swift in Sources */,
 				ABA7937F2C1AA5B500299AD9 /* HTTPMethod.swift in Sources */,
 				ABA7938D2C1AA6F400299AD9 /* NarutoAPI+Character.swift in Sources */,
 				ABA793912C1AA89700299AD9 /* CharacterListReducer.swift in Sources */,
