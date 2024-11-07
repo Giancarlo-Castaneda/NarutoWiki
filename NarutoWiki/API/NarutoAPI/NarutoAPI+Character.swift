@@ -34,4 +34,13 @@ extension NarutoAPI {
 
         return .init(path: "/akatsuki", method: .get, body: nil, queryItems: query)
     }
+
+    static func tailedBeastsListGET(page: Int, limit pageSize: Int) -> NarutoAPI {
+        let query = [
+            URLQueryItem(name: "page", value: "\(page)"),
+            URLQueryItem(name: "limit", value: "\(pageSize)")
+        ]
+
+        return .init(path: "/tailed-beasts", method: .get, body: nil, queryItems: query)
+    }
 }

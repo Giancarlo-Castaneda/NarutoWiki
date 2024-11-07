@@ -19,6 +19,7 @@ struct CharacterListReducer {
         case allCharacters = "Characters"
         case kara
         case akatsuki
+        case tailedBeasts = "tailed beasts"
     }
 
     enum Action {
@@ -74,6 +75,9 @@ struct CharacterListReducer {
 
         case .akatsuki:
             return try await characterClient.fetchAkatsuki(page, perPage)
+
+        case .tailedBeasts:
+            return try await characterClient.fetchTailedBeasts(page, perPage)
         }
     }
 
@@ -87,6 +91,9 @@ struct CharacterListReducer {
 
         case .akatsuki:
             return response.akatsuki ?? []
+
+        case .tailedBeasts:
+            return response.tailedBeasts ?? []
         }
     }
 }

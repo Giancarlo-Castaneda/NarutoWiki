@@ -5,6 +5,7 @@ struct CharacterListClient {
     var fetchCharacters: (Int, Int) async throws -> CharacterPagedModel
     var fetchKara: (Int, Int) async throws -> CharacterPagedModel
     var fetchAkatsuki: (Int, Int) async throws -> CharacterPagedModel
+    var fetchTailedBeasts: (Int, Int) async throws -> CharacterPagedModel
 }
 
 extension CharacterListClient: DependencyKey {
@@ -14,13 +15,21 @@ extension CharacterListClient: DependencyKey {
             let dto = try await networkingProvider.sendRequest(endpoint: endpoint, responseModel: CharacterListDTO.self)
 
             return CharacterPagedModel(dto)
+
         }, fetchKara: { page, limit in
             let endpoint = NarutoAPI.karaListGET(page: page, limit: limit)
             let dto = try await networkingProvider.sendRequest(endpoint: endpoint, responseModel: CharacterListDTO.self)
 
             return CharacterPagedModel(dto)
+
         }, fetchAkatsuki: { page, limit in
             let endpoint = NarutoAPI.akatsukiListGET(page: page, limit: limit)
+            let dto = try await networkingProvider.sendRequest(endpoint: endpoint, responseModel: CharacterListDTO.self)
+
+            return CharacterPagedModel(dto)
+
+        }, fetchTailedBeasts: { page, limit in
+            let endpoint = NarutoAPI.tailedBeastsListGET(page: page, limit: limit)
             let dto = try await networkingProvider.sendRequest(endpoint: endpoint, responseModel: CharacterListDTO.self)
 
             return CharacterPagedModel(dto)

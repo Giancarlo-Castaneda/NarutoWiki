@@ -5,7 +5,16 @@ struct CharacterListDTO: Codable {
     let characters: [CharacterDTO]?
     let kara: [CharacterDTO]?
     let akatsuki: [CharacterDTO]?
+    let tailedBeasts: [CharacterDTO]?
     let currentPage, pageSize, total: Int
+
+    enum CodingKeys: String, CodingKey {
+        case characters, kara, akatsuki
+        case tailedBeasts = "tailed-beasts"
+        case currentPage
+        case pageSize
+        case total
+    }
 }
 
 // MARK: - Character

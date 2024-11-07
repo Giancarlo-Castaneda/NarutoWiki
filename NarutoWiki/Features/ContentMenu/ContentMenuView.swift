@@ -33,6 +33,7 @@ struct ContentMenuView: View {
                         }
                     }
                 }
+                .scrollIndicators(.hidden)
                 .padding(.horizontal, 10)
             }
         } destination: { store in
@@ -74,6 +75,9 @@ struct ContentMenuView: View {
 
         case 7:
             return .characterList(CharacterListReducer.State(usage: .akatsuki))
+
+        case 8:
+            return .characterList(CharacterListReducer.State(usage: .tailedBeasts))
 
         default:
             return nil

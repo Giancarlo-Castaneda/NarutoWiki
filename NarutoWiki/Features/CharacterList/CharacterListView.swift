@@ -45,6 +45,7 @@ struct CharacterListView: View {
                     }
 
                 }
+                .scrollIndicators(.hidden)
                 .onAppear {
                     store.send(.fetchCharacterList)
                 }
